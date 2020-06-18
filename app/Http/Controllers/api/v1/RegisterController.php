@@ -18,6 +18,8 @@ class RegisterController extends Controller
         'password' => bcrypt($request->password),
       ]);
 
+      $user->attachRole('cashier');
+
       $token = auth()->login($user);
 
       return response()->json([

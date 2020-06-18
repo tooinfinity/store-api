@@ -17,8 +17,11 @@ this application web created to manage Stores with small Business.
     * [X] Login
     * [X] getuser
     * [X] logout
-    * [X] register
+    * [X] register (only administrator can register a user)
   * [ ] Access Control List (Roles and Permissions)
+    * [X] install and configure laratrust
+    * [X] administrator and cashier Roles
+    * [X] Get all Users with there Roles
 * [ ] Product Management Module
 * [ ] Customer Management Module
 * [ ] Provider Management Module

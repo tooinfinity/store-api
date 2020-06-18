@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 
 class LoginController extends Controller
 {
@@ -29,18 +30,21 @@ class LoginController extends Controller
 
         return response()->json([
             'success' => true,
-            'user' => $user,
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
     }
 
-    public function me(Request $request)
+    public function getUser(Request $request)
     {
         if (auth()->check()) {
             $user = auth()->user();
-            return response()->json(['user' => $user],200);
+            $role = $user->hasRole('administrator') ? 'administrator' : 'cashier';
+            return response()->json([
+                'user' => $user,
+                'role' => $role
+            ],200);
         }
     }
 
