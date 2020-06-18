@@ -12,6 +12,13 @@ this application web created to manage Stores with small Business.
 
 * [X] Create a laravel Project
 * [ ] user control system
+  * [X] authentication system
+    * [X] Install and configure jwt auth package (run __php artisan jwt:secret__ for other pc)
+    * [X] Login
+    * [X] getuser
+    * [X] logout
+    * [X] register
+  * [ ] Access Control List (Roles and Permissions)
 * [ ] Product Management Module
 * [ ] Customer Management Module
 * [ ] Provider Management Module
@@ -21,6 +28,8 @@ this application web created to manage Stores with small Business.
 * [ ] Point of Sale
 * [ ] Generate Reports for all Modules
 * [ ] Generate Activity Log
+* [ ] backup and restore database
+* [ ] Desktop app using elecron.js
 
 
 
