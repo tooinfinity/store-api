@@ -17,5 +17,7 @@ class UserSeeder extends Seeder
             'email' => 'touwfiq@app.com',
             'password' => Hash::make('25031992')
         ]);
+
+        $user->attachRole('administrator');
     }
 }
